@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的第一篇博客 | My Blog</title>
+  <title>线性表(Linear List) | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="标题标题你好我试试看还有吗不错哦牛逼12345678#include &lt;stdio.h&gt;int main()&amp;#123;    printf(&quot;666&quot;);        return 0;&amp;#125;     第二章$$output&#x3D;17dx&#x2F;dt+18cos(x^2$$ 内容">
+  <meta name="description" content="线性表(Linear List)由同类型数据元素构成有序序列的线性结构. 特征 表中元素个数为线性表长度. 线性表没有元素时称空表. 表起始位置为表头, 结束位置为表尾.  顺序结构线性表通过数组形式储存数据.   查找方便, 修改困难. 1234567&#96;typedef struct LNode *List;&#96; struct LNode&amp;#123;     ElementType Data[MAX">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://yoursite.com/2020/04/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="线性表(Linear List)">
+<meta property="og:url" content="http://yoursite.com/2020/04/02/%E7%BA%BF%E6%80%A7%E8%A1%A8(Linear%20List)/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="标题标题你好我试试看还有吗不错哦牛逼12345678#include &lt;stdio.h&gt;int main()&amp;#123;    printf(&quot;666&quot;);        return 0;&amp;#125;     第二章$$output&#x3D;17dx&#x2F;dt+18cos(x^2$$ 内容">
+<meta property="og:description" content="线性表(Linear List)由同类型数据元素构成有序序列的线性结构. 特征 表中元素个数为线性表长度. 线性表没有元素时称空表. 表起始位置为表头, 结束位置为表尾.  顺序结构线性表通过数组形式储存数据.   查找方便, 修改困难. 1234567&#96;typedef struct LNode *List;&#96; struct LNode&amp;#123;     ElementType Data[MAX">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-02T07:33:01.000Z">
-<meta property="article:modified_time" content="2020-04-02T08:31:25.111Z">
+<meta property="article:published_time" content="2020-04-02T10:25:13.197Z">
+<meta property="article:modified_time" content="2020-04-02T10:44:38.333Z">
 <meta property="article:author" content="李烨">
 <meta name="twitter:card" content="summary">
   
@@ -150,37 +150,87 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-线性表(Linear List)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客
+      线性表(Linear List)
     </h1>
   
 
         
-        <a href="/2020/04/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-04-02T07:33:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+        <a href="/2020/04/02/%E7%BA%BF%E6%80%A7%E8%A1%A8(Linear%20List)/" class="archive-article-date">
+  	<time datetime="2020-04-02T10:25:13.197Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h1 id="标题-1"><a href="#标题-1" class="headerlink" title="标题"></a>标题</h1><h2 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h2><h3 id="我试试看"><a href="#我试试看" class="headerlink" title="我试试看"></a>我试试看</h3><h4 id="还有吗"><a href="#还有吗" class="headerlink" title="还有吗"></a>还有吗</h4><h5 id="不错哦"><a href="#不错哦" class="headerlink" title="不错哦"></a>不错哦</h5><h6 id="牛逼"><a href="#牛逼" class="headerlink" title="牛逼"></a>牛逼</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"666"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="线性表-Linear-List"><a href="#线性表-Linear-List" class="headerlink" title="线性表(Linear List)"></a>线性表(Linear List)</h2><p>由同类型数据元素构成有序序列的线性结构.</p>
+<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ol>
+<li>表中元素个数为线性表长度.</li>
+<li>线性表没有元素时称空表.</li>
+<li>表起始位置为表头, 结束位置为表尾.</li>
+</ol>
+<h3 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h3><p>线性表通过数组形式储存数据.  </p>
+<p>查找方便, 修改困难.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`<span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> *<span class="title">List</span>;</span>`</span><br><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">     ElementType Data[MAXSIZE];</span><br><span class="line">     <span class="keyword">int</span> last;	<span class="comment">//指向表尾</span></span><br><span class="line"> &#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> <span class="title">L</span>;</span></span><br><span class="line">List PtrL;</span><br></pre></td></tr></table></figure>
+
+<p>访问下标i的元素时:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">L.Data[i];<span class="comment">/*或者*/</span>PtrL-&gt;Data[i];</span><br></pre></td></tr></table></figure>
+
+<h4 id="主要操作"><a href="#主要操作" class="headerlink" title="主要操作"></a>主要操作</h4><ol>
+<li><p><em>List</em> MakeEmpty(): 初始化空表.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">List <span class="title">MakeEmpty</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	List PtrL;</span><br><span class="line">	PtrL = (List)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LNode));</span><br><span class="line">	PtrL-&gt;Last = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">return</span> PtrL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>int</em> Find(ElementType X, Lits L): 查找X第一次出现的位置.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(ElementType X, List PtrL)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> (i &lt;= PtrL -&gt; Last &amp;&amp; PtrL -&gt; Data[i] != X)&#123;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;<span class="keyword">if</span> (i &gt; PtrL -&gt; Last) <span class="keyword">return</span> <span class="number">-1</span>;	<span class="comment">//没找到返回-1.</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>$$<br>output=17dx/dt+18cos(x^2<br>$$</p>
-<p>内容</p>
-<hr>
-<ul>
-<li><input disabled="" type="checkbox"> </li>
-</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p><em>void</em> Insert(ElementType X, int i, List L): 在i位数据前插入X元素.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(ElementType X, <span class="keyword">int</span> i , List PtrL)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">if</span> (PtrL -&gt; Last == MAXSIZE - <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"表满"</span>);</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;<span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; PtrL -&gt; Last + <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"位置不合法"</span>);</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;<span class="keyword">for</span> (j = PtrL -&gt; Last; j &gt;= i - <span class="number">1</span>; j--)&#123;</span><br><span class="line">        PrtL -&gt; Data[j+<span class="number">1</span>] =PtrL -&gt; Data[j];	<span class="comment">//把i位之前的数字都向后移动一位</span></span><br><span class="line">    &#125;PtrL -&gt; Data[i<span class="number">-1</span>] = X;					<span class="comment">//新元素插入</span></span><br><span class="line">    PtrL -&gt; Last++;							<span class="comment">//Last还是指向最后一位元素</span></span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="4">
+<li><p><em>void</em> Delete (int i, List L): 删除第i个元素.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete</span><span class="params">(<span class="keyword">int</span> i, List PtrL)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; PtrL -&gt; Last + <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"不存在第%d个元素"</span>);</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;<span class="keyword">for</span> (j = i; j &lt;= PtrL -&gt; Last; j++)&#123;</span><br><span class="line">        PtrL -&gt; Data[j<span class="number">-1</span>] =PtrL -&gt; Data[j];	<span class="comment">//将i位之前的数字都向前移动一位</span></span><br><span class="line">    &#125;PtrL-&gt; Last --;						<span class="comment">//Last还是指向最后一位</span></span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="链式结构"><a href="#链式结构" class="headerlink" title="链式结构"></a>链式结构</h3><p>线性表通过链表形式储存数据.  </p>
+<p>修改方便, 查找困难.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> strcut LNode *List;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">	ElementType Data;</span><br><span class="line">	List Next;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> <span class="title">L</span>;</span></span><br><span class="line">List PtrL;</span><br></pre></td></tr></table></figure>
+
+<h4 id="主要操作-1"><a href="#主要操作-1" class="headerlink" title="主要操作"></a>主要操作</h4><ol>
+<li><p><em>int</em> Length(List PtrL): 返回线性表长度.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Length</span><span class="params">(List PtrL)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (p)&#123;</span><br><span class="line">		p = p -&gt; Next;</span><br><span class="line">		j++;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>List</em> FindIth(int i, List PtrL): 寻找第i个数据的节点地址.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List FindIth(int i, List PtrL)&#123;</span><br><span class="line">	List p&#x3D; PtrL;</span><br><span class="line">	int j &#x3D; 1;</span><br><span class="line">	while (p !&#x3D; NULL &amp;&amp; j &lt; i)&#123;</span><br><span class="line">		p &#x3D; p -&gt; Next;</span><br><span class="line">		j++;</span><br><span class="line">	&#125;if (j &#x3D;&#x3D; i) return p;	&#x2F;&#x2F;返回第i位的数据地址</span><br><span class="line">	else return NULL;		&#x2F;&#x2F;否则返回空</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>List</em> Find(ElementType X, List PtrL): 返回X元素所在的地址.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">List <span class="title">Find</span><span class="params">(ElementType X, List PtrL)</span></span>&#123;</span><br><span class="line">	List p = PtrL;</span><br><span class="line">	<span class="keyword">while</span> (p != <span class="literal">NULL</span> &amp;&amp; p -&gt; Data != X)&#123;</span><br><span class="line">		p = p -&gt; Next;</span><br><span class="line">	&#125;<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>List</em> Insert(ElementType X, List PtrL): 在第i位插入一个新元素.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">List <span class="title">Insert</span><span class="params">(ElementType X,<span class="keyword">int</span> i, List PtrL)</span></span>&#123;</span><br><span class="line">	List P, s;</span><br><span class="line">	<span class="keyword">if</span> (i == <span class="number">1</span>)&#123;</span><br><span class="line">		s = (List)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LNode));</span><br><span class="line">		s -&gt; Data = x;</span><br><span class="line">		s -&gt; Next = PtrL;</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	&#125;p = FindIth(i<span class="number">-1</span>, PtrL);		<span class="comment">//寻找i-1的点是否存在</span></span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"参数不合法"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        s = (List)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LNode));</span><br><span class="line">        s -&gt; Data = x;</span><br><span class="line">		s -&gt; Next = p -&gt; Next;</span><br><span class="line">        p -&gt; Next = s;</span><br><span class="line">        <span class="keyword">return</span> PtrL;								<span class="comment">//返回新链表的指针</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>List</em> Delete(int i, List L): 删除第i位的元素.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">List <span class="title">Delete</span><span class="params">(<span class="keyword">int</span> i, List L)</span></span>&#123;</span><br><span class="line">	List p, s;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">1</span>)&#123;							<span class="comment">//如果要删除的是头节点</span></span><br><span class="line">        s = PtrL;</span><br><span class="line">        <span class="keyword">if</span> (PtrL != <span class="literal">NULL</span>) PtrL = PtrL -&gt; Next;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="built_in">free</span>(s);</span><br><span class="line">        <span class="keyword">return</span> PtrL;</span><br><span class="line">    &#125;p = FindIth(i<span class="number">-1</span>,PtrL);					<span class="comment">//查找第i-1个节点</span></span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"第%d个节点不存在"</span>,i - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (p -&gt; Next == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"第%d个节点不存在"</span>,i);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        s = p -&gt; Next;</span><br><span class="line">        p -&gt; Next = s -&gt; Next;</span><br><span class="line">        <span class="built_in">free</span>(s);</span><br><span class="line">        <span class="keyword">return</span> PtrL;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
 
       
 
@@ -239,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/02/%E7%BA%BF%E6%80%A7%E8%A1%A8(Linear%20List)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -253,18 +303,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/02/%E7%BA%BF%E6%80%A7%E8%A1%A8(Linear%20List)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          线性表(Linear List)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/04/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客</div>
       <i class="icon-circle-right"></i>
     </a>
   
