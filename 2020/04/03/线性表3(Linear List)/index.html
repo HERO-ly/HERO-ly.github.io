@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | My Blog</title>
+  <title>线性表3(Linear List) | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="队列(Queue)具有一定操作约束的线性表, 只能在一段插入, 另一端删除. 数据先进先出. 顺序结构队列通过数组结构实现. 1234567#define MaxSize Number&#x2F;&#x2F;储存数组的最大个数struct QNode&amp;#123;    ElementType Data[MaxSize];    int rear;			&#x2F;&#x2F;指向尾元素    int front;			&#x2F;&#x2F;指向头元素&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性表3(Linear List)">
+<meta property="og:url" content="http://yoursite.com/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="队列(Queue)具有一定操作约束的线性表, 只能在一段插入, 另一端删除. 数据先进先出. 顺序结构队列通过数组结构实现. 1234567#define MaxSize Number&#x2F;&#x2F;储存数组的最大个数struct QNode&amp;#123;    ElementType Data[MaxSize];    int rear;			&#x2F;&#x2F;指向尾元素    int front;			&#x2F;&#x2F;指向头元素&amp;#">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-03T07:21:02.736Z">
+<meta property="article:modified_time" content="2020-04-03T07:21:02.736Z">
 <meta property="article:author" content="李烨">
 <meta name="twitter:card" content="summary">
   
@@ -146,103 +150,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-线性表3(Linear List)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      线性表3(Linear List)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/" class="archive-article-date">
+
+        
+        <a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/" class="archive-article-date">
   	<time datetime="2020-04-03T07:21:02.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/">线性表3(Linear List)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="队列-Queue"><a href="#队列-Queue" class="headerlink" title="队列(Queue)"></a>队列(Queue)</h2><p>具有一定操作约束的线性表, 只能在一段插入, 另一端删除. 数据先进先出.</p>
+<h3 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h3><p>队列通过数组结构实现.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize Number<span class="comment">//储存数组的最大个数</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">QNode</span>&#123;</span></span><br><span class="line">    ElementType Data[MaxSize];</span><br><span class="line">    <span class="keyword">int</span> rear;			<span class="comment">//指向尾元素</span></span><br><span class="line">    <span class="keyword">int</span> front;			<span class="comment">//指向头元素</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> *<span class="title">Queue</span>;</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h4 id="主要操作"><a href="#主要操作" class="headerlink" title="主要操作"></a>主要操作</h4><ol>
+<li><p><em>void</em> AddQ(Queue PtrQ, ElementType item): 往队列中放入元素item.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在循坏队列中, 无法判断队列是否空或者满, 所以通过少放一位数据, 来判断队列状态*/</span></span><br><span class="line"><span class="comment">/*也可以用tag等标识符来判断队列状态*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddQ</span><span class="params">(Queue PtrQ, ElementType item)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((PtrQ -&gt; rear + <span class="number">1</span>) % MaxSize == PtrQ -&gt; front)&#123;	</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"队列已满"</span>);</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;PtrQ -&gt; rear = (PtrQ -&gt; rear + <span class="number">1</span>)% MaxSize;		<span class="comment">//求余实现循环储存</span></span><br><span class="line">    PtrQ -&gt; Data[PtrQ -&gt; rear] = item;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>ElementType</em> DeleteQ(Queue PtrQ): 释放队列头元素.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElementType <span class="title">DeleteQ</span><span class="params">(Queue PtrQ)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (PtrQ -&gt; front == PtrQ -&gt; rear)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"队列空"</span>);</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        PtrQ -&gt; front = (PtrQ -&gt; front + <span class="number">1</span>) % MaxSize;</span><br><span class="line">        <span class="keyword">return</span> PtrQ -&gt; Data[PtrQ -&gt; front];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<h3 id="链式结构"><a href="#链式结构" class="headerlink" title="链式结构"></a>链式结构</h3><p>队列通过链表结构实现.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//规定front指向头结点, rear指向尾结点</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    ElementType Data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">Next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">QNode</span>&#123;</span>				<span class="comment">//指向一个链表的头和尾</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">rear</span>;</span>		<span class="comment">//指向尾结点</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">front</span>;</span>		<span class="comment">//指向头结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> *<span class="title">Queue</span>;</span></span><br><span class="line">Queue PtrQ;</span><br></pre></td></tr></table></figure>
+
+<h4 id="主要操作-1"><a href="#主要操作-1" class="headerlink" title="主要操作"></a>主要操作</h4><ol>
+<li><p><em>void</em> AddQ(Queue PtrQ, ElementType item): 往队列中放入元素item.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddQ</span><span class="params">(Queue PtrQ, ElementType item)</span></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">Tmp</span>;</span></span><br><span class="line">    Tmp = (struct Node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (PtrQ -&gt; front == <span class="literal">NULL</span>)&#123;</span><br><span class="line">		PtrQ -&gt; front = PtrQ -&gt; rear = Tmp;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        PtrQ -&gt; rear = PtrQ -&gt; rear -&gt; Next;</span><br><span class="line">    &#125;Tmp -&gt; Next = <span class="literal">NULL</span>;</span><br><span class="line">    Tmp -&gt; Data = item;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p><em>ElementType</em> DeleteQ(Queue PtrQ): 释放队列头元素.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElementType <span class="title">DeleteQ</span><span class="params">(Queue PtrQ)</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">Tmp</span>;</span></span><br><span class="line">    ElementType Tmp_itme;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (PtrQ -&gt; front == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        prntf(<span class="string">"队列空"</span>);</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    &#125;Tmp = PtrQ -&gt; front;</span><br><span class="line">    <span class="keyword">if</span> (PtrQ -&gt; front == PtrQ -&gt; rear)&#123;</span><br><span class="line">        PtrQ -&gt; front = PtrQ -&gt; rear =<span class="literal">NULL</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        PtrQ -&gt; front = PtrQ -&gt; front -&gt; Next;</span><br><span class="line">    &#125;Tmp_itme = Tmp -&gt; Data;</span><br><span class="line">    <span class="built_in">free</span>(Tmp);</span><br><span class="line">    <span class="keyword">return</span> Tmp_itme;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A81(Linear%20List)/" class="archive-article-date">
-  	<time datetime="2020-04-03T05:31:49.035Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A81(Linear%20List)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">线性表1(Linear List)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A81(Linear%20List)/">线性表1(Linear List)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:43:56.910Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/">线性表2(Linear List)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -265,8 +330,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
