@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://hero-ly.github.io/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%912/%E4%BA%8C%E5%8F%89%E6%A0%912%5Cin.png">
 <meta property="og:image" content="https://hero-ly.github.io/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%912/%E4%BA%8C%E5%8F%89%E6%A0%912%5Cpost.png">
 <meta property="article:published_time" content="2020-04-05T09:39:06.000Z">
-<meta property="article:modified_time" content="2020-04-05T10:48:34.300Z">
+<meta property="article:modified_time" content="2020-04-05T12:46:44.476Z">
 <meta property="article:author" content="李烨">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="基础知识">
@@ -181,7 +181,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">579字</span>
+        <span class="post-count">696字</span>
       </span>
     </span>
 
@@ -190,7 +190,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
+        <span class="post-count">3分</span>
       </span>
     </span>
 </div>
@@ -218,7 +218,8 @@
 
 </li>
 </ol>
-<h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><h4 id="递归遍历"><a href="#递归遍历" class="headerlink" title="递归遍历"></a>递归遍历</h4><ol>
+<h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><p>本质核心问题: <strong>二维结构的线性化</strong> –&gt; 通过访问父节点再访问其左右子节点.</p>
+<h4 id="递归遍历"><a href="#递归遍历" class="headerlink" title="递归遍历"></a>递归遍历</h4><ol>
 <li><p>先序遍历:</p>
 <p>先访问根结点, 再遍历其左子树, 最后遍历右子树.<img src="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%912/%E4%BA%8C%E5%8F%89%E6%A0%912%5Cpre.png" alt></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PreOrderTraversal</span><span class="params">(Tree PT)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Root)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, PT -&gt; Data);</span><br><span class="line">        PreOrderTraversal( PT -&gt; Left);</span><br><span class="line">        PreOrderTraversal( PT -&gt; Right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -235,7 +236,7 @@
 </ol>
 <h4 id="非递归遍历-堆栈思想"><a href="#非递归遍历-堆栈思想" class="headerlink" title="非递归遍历(堆栈思想)"></a>非递归遍历(堆栈思想)</h4><ol>
 <li><p>先序遍历:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrederTarversal</span><span class="params">(Tree PT)</span></span>&#123;</span><br><span class="line">    Tree T = PT;</span><br><span class="line">    Stack S = creatStack(MaxSize);	<span class="comment">/*创建堆栈*/</span></span><br><span class="line">    <span class="keyword">while</span> (T || !IsEmpty(S))&#123;</span><br><span class="line">        <span class="keyword">while</span> (T)&#123;					<span class="comment">/*一直向左走, 并且把元素压栈*/</span></span><br><span class="line">            Pusht(S,T);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>, T -&gt; Data);<span class="comment">/*第一次遇到就输出*/</span></span><br><span class="line">            T = T -&gt; Left;</span><br><span class="line">        &#125;<span class="keyword">if</span> (!IsEmpty(S))&#123;</span><br><span class="line">            T = Pop(S);				<span class="comment">/*把元素弹出栈*/</span></span><br><span class="line">            T = T -&gt; Right;			<span class="comment">/*转向右子树*/</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PreOrederTarversal</span><span class="params">(Tree PT)</span></span>&#123;</span><br><span class="line">    Tree T = PT;</span><br><span class="line">    Stack S = creatStack(MaxSize);	<span class="comment">/*创建堆栈*/</span></span><br><span class="line">    <span class="keyword">while</span> (T || !IsEmpty(S))&#123;</span><br><span class="line">        <span class="keyword">while</span> (T)&#123;					<span class="comment">/*一直向左走, 并且把元素压栈*/</span></span><br><span class="line">            Pusht(S,T);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>, T -&gt; Data);<span class="comment">/*第一次遇到就输出*/</span></span><br><span class="line">            T = T -&gt; Left;</span><br><span class="line">        &#125;<span class="keyword">if</span> (!IsEmpty(S))&#123;</span><br><span class="line">            T = Pop(S);				<span class="comment">/*把元素弹出栈*/</span></span><br><span class="line">            T = T -&gt; Right;			<span class="comment">/*转向右子树*/</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -246,10 +247,9 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrederTarversal</span><span class="params">(Tree PT)</span></span>&#123;</span><br><span class="line">    Tree T = PT;</span><br><span class="line">    Stack S = creatStack(MaxSize);	<span class="comment">/*创建堆栈*/</span></span><br><span class="line">    <span class="keyword">while</span> (T || !IsEmpty(S))&#123;</span><br><span class="line">        <span class="keyword">while</span> (T)&#123;					<span class="comment">/*一直向左走, 并且把元素压栈*/</span></span><br><span class="line">            Pusht(S,T);</span><br><span class="line">            T = T -&gt; Left;</span><br><span class="line">        &#125;<span class="keyword">if</span> (!IsEmpty(S))&#123;</span><br><span class="line">            T = Pop(S);				<span class="comment">/*把元素弹出栈*/</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>, T -&gt; Data);<span class="comment">/*第二次遇到再输出*/</span></span><br><span class="line">            T = T -&gt; Right;			<span class="comment">/*转向右子树*/</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-
 </li>
 </ol>
-
+<h4 id="层序遍历-队列思想"><a href="#层序遍历-队列思想" class="headerlink" title="层序遍历(队列思想)"></a>层序遍历(队列思想)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LevelOrderTraversal</span><span class="params">(Tree PT)</span></span>&#123;</span><br><span class="line">    Queue Q;</span><br><span class="line">    Tree T;</span><br><span class="line">    <span class="keyword">if</span> (PT) <span class="keyword">return</span> ;			<span class="comment">/*如果是空树则返回*/</span></span><br><span class="line">    Q = CreatQueue(MaxSize);	<span class="comment">/*创建队列Q*/</span></span><br><span class="line">    ADDQ(Q, PT);</span><br><span class="line">    <span class="keyword">while</span> (!IsEmptyQ(Q))&#123;</span><br><span class="line">        T = DeleteQ(Q);				<span class="comment">/*先删除元素*/</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, T -&gt; Data);</span><br><span class="line">        <span class="keyword">if</span> (T -&gt; Left) AddQ(Q, T -&gt; Left);		<span class="comment">/*放入左子树*/</span></span><br><span class="line">        <span class="keyword">if</span> (T -&gt; Right) AddQ(Q, T -&gt; Right);	<span class="comment">/*放入右子树*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -369,7 +369,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊二叉树"><span class="toc-number">1.</span> <span class="toc-text">特殊二叉树</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的性质"><span class="toc-number"></span> <span class="toc-text">二叉树的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的存储结构"><span class="toc-number"></span> <span class="toc-text">二叉树的存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的遍历"><span class="toc-number"></span> <span class="toc-text">二叉树的遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#递归遍历"><span class="toc-number">1.</span> <span class="toc-text">递归遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非递归遍历-堆栈思想"><span class="toc-number">2.</span> <span class="toc-text">非递归遍历(堆栈思想)</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#特殊二叉树"><span class="toc-number">1.</span> <span class="toc-text">特殊二叉树</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的性质"><span class="toc-number"></span> <span class="toc-text">二叉树的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的存储结构"><span class="toc-number"></span> <span class="toc-text">二叉树的存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉树的遍历"><span class="toc-number"></span> <span class="toc-text">二叉树的遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#递归遍历"><span class="toc-number">1.</span> <span class="toc-text">递归遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非递归遍历-堆栈思想"><span class="toc-number">2.</span> <span class="toc-text">非递归遍历(堆栈思想)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#层序遍历-队列思想"><span class="toc-number">3.</span> <span class="toc-text">层序遍历(队列思想)</span></a></li></ol>
                     </div>
                 </span>
             </div>
