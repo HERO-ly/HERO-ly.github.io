@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hero-ly.github.io">
-  <title>My Blog</title>
+  <title>二叉树 - 堆(Heap) | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
-<meta property="og:url" content="https://hero-ly.github.io/index.html">
+  <meta name="description" content="一种特别的”队列”, 元素出堆的顺序按照优先权(或者关键值)顺序. 具有结构性与有序性.  结构性: 可以用数组表示其逻辑顺序 有序性: 任一结点的关键字也满足和其子树所有结点某一逻辑关系(比如最大最小).  通过完全二叉树实现. 1234567&#x2F;*举例 - 最大堆样板*&#x2F;typedef struct HeapStruct* MaxHeap;struct HeapStruct&amp;#123;    E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树 - 堆(Heap)">
+<meta property="og:url" content="https://hero-ly.github.io/2020/04/07/%E5%A0%86/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="一种特别的”队列”, 元素出堆的顺序按照优先权(或者关键值)顺序. 具有结构性与有序性.  结构性: 可以用数组表示其逻辑顺序 有序性: 任一结点的关键字也满足和其子树所有结点某一逻辑关系(比如最大最小).  通过完全二叉树实现. 1234567&#x2F;*举例 - 最大堆样板*&#x2F;typedef struct HeapStruct* MaxHeap;struct HeapStruct&amp;#123;    E">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-07T02:58:57.000Z">
+<meta property="article:modified_time" content="2020-04-07T16:02:37.964Z">
 <meta property="article:author" content="李烨">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="基础知识">
+<meta property="article:tag" content="二叉树">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="My Blog" type="application/atom+xml">
@@ -146,16 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-堆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-堆" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/07/%E5%A0%86/">二叉树 - 堆(Heap)</a>
+    <h1 class="article-title" itemprop="name">
+      二叉树 - 堆(Heap)
     </h1>
   
 
@@ -197,7 +202,21 @@
 </blockquote>
 <p>通过完全二叉树实现.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*举例 - 最大堆样板*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">HeapStruct</span>* <span class="title">MaxHeap</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HeapStruct</span>&#123;</span></span><br><span class="line">    ElementType *Element;	<span class="comment">/*设好一个指针, 到时候可以malloc申请所需大小的数组空间*/</span></span><br><span class="line">    <span class="keyword">int</span> Size;		<span class="comment">/*当前堆的元素个数*/</span></span><br><span class="line">    <span class="keyword">int</span> Capacity;	<span class="comment">/*堆的最大容量*/</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-        
+
+<a id="more"></a>
+
+<hr>
+<h3 id="主要操作"><a href="#主要操作" class="headerlink" title="主要操作"></a>主要操作</h3><p><em>MaxHeap</em> CreateHeap(int MaxSize): 创建一个容量为MaxSize的最大堆.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">MaxHeap <span class="title">CreateHeap</span><span class="params">(<span class="keyword">int</span> MaxSize)</span></span>&#123;</span><br><span class="line">    MaxHeap Tmp;</span><br><span class="line">    </span><br><span class="line">    Tmp = (MaxHeap)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct HeapStruct));</span><br><span class="line">    Tmp -&gt; Element = <span class="built_in">malloc</span>((MaxSize+<span class="number">1</span>)*<span class="keyword">sizeof</span>(ElementType));	<span class="comment">/*创建数组*/</span></span><br><span class="line">    Tmp -&gt; Size = <span class="number">0</span>;</span><br><span class="line">    Tmp -&gt; Capacity = MaxSize;</span><br><span class="line">    Tmp -&gt; Element[<span class="number">0</span>] = MaxData;		<span class="comment">/*设置一个值作为哨兵, 大于队中所有的值*/</span></span><br><span class="line">    <span class="keyword">return</span> Tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>void</em> InsertHeap(ElementType X, MaxHeap H): 把元素X插入堆中.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(ElementType X, MaxHeap H)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">if</span> (H -&gt; Size == H -&gt; MaxSize)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"堆已满"</span>);</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;i = ++ H -&gt; Size;		<span class="comment">/*i指向需要占用的新位置*/</span></span><br><span class="line">    <span class="keyword">for</span> (;H -&gt; Element[i/<span class="number">2</span>] &lt; item;i/=<span class="number">2</span>)</span><br><span class="line">        H -&gt; Element[i] = H -&gt; Element[i/<span class="number">2</span>];	<span class="comment">/*向后挪动结点*/</span></span><br><span class="line">    H -&gt; Element[i] = item;	<span class="comment">/*插入这时i的位置*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>ElementType</em> DeleteHeap(MaxHeap H): 删除堆的首元素.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElementType <span class="title">DeleteHeap</span><span class="params">(MaxHeap H)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> Parent, Child;</span><br><span class="line">    ElementType MaxItem, Temp;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (H -&gt; Size == <span class="number">0</span>)&#123;		<span class="comment">/*判断堆是否空堆*/</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"堆已空"</span>);</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    &#125;MaxItem = H -&gt; Element[<span class="number">1</span>];		<span class="comment">/*保存最大值*/</span></span><br><span class="line">    Temp = H -&gt; Element[H -&gt; Size];	<span class="comment">/*保存最后一个值*/</span></span><br><span class="line">    H -&gt; Size--;					<span class="comment">/*减少堆的数量*/</span></span><br><span class="line">    <span class="keyword">for</span> (Parent = <span class="number">1</span>; Parent * <span class="number">2</span> &lt;= H -&gt; Size; Parent = Child)&#123;</span><br><span class="line">        Child = Parent * <span class="number">2</span>;			<span class="comment">/*寻找该结点的左结点*/</span></span><br><span class="line">        <span class="keyword">if</span> ((Child != H -&gt; Size)	<span class="comment">/*判断是否有右结点*/</span></span><br><span class="line">            &amp;&amp; (H -&gt; Element[Child] &lt; H -&gt; Element[Child + <span class="number">1</span>]))&#123;</span><br><span class="line">            <span class="comment">/*左结点小于右节点*/</span></span><br><span class="line">            <span class="comment">/*将Child指向左右结点中比较大的结点*/</span></span><br><span class="line">            Child++;</span><br><span class="line">        &#125;<span class="keyword">if</span> (Temp &gt;= H -&gt; Element[Child]) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> H -&gt; Element[Parent] = H -&gt; Element[Child];</span><br><span class="line">    &#125;H -&gt; Element[Parent] = Temp;</span><br><span class="line">    <span class="keyword">return</span> MaxItem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>堆的建立. 优于通过插入生成堆.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*伪代码*/</span></span><br><span class="line"><span class="comment">/*从子节点开始不断调整堆, 再到对应的父节点判断是否左右都为堆, 再调整一次, 进行循环*/</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -227,227 +246,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/07/%E5%A0%86/">阅读全文 >></a>
-        </p>
-      
 
       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-二叉搜索树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/06/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">二叉树 - 二叉搜索树与平衡二叉树</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/06/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-04-06T08:40:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
-</a>
-	
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">839字</span>
-      </span>
+      </div>
     </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">3分</span>
-      </span>
-    </span>
+  </div>
 </div>
 
-          
-	
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><p>一个二叉搜索树, 可以为空; 如果不为空, 满足以下性质:</p>
-<ul>
-<li>非空左子树的所有键值小于其根结点的键值</li>
-<li>非空右子树的所有键值大于其根结点的键值.</li>
-<li>左右子树也满足二叉搜索树的定义.</li>
-</ul>
-        
-      
-
-      
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://hero-ly.github.io/2020/04/07/%E5%A0%86/" alt="微信分享二维码">
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/06/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-二叉树2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%912/">二叉树</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%912/" class="archive-article-date">
-  	<time datetime="2020-04-05T09:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
-</a>
-	
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">696字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">3分</span>
-      </span>
-    </span>
 </div>
 
-          
-	
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个有穷的结点结合, 并且由根节点和其左右二叉子树组成.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%912/">阅读全文 >></a>
-        </p>
-      
-
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/06/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二叉树 - 二叉搜索树与平衡二叉树</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -462,412 +329,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树 - 查找与树(Tree)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-04-05T06:12:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
-</a>
-	
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">616字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-          
-	
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="静态查找-记录不变化-只有查找"><a href="#静态查找-记录不变化-只有查找" class="headerlink" title="静态查找(记录不变化) - 只有查找"></a>静态查找(记录不变化) - 只有查找</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*把数据放数组里面*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE Number</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> *<span class="title">List</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span>&#123;</span></span><br><span class="line">	ElementType Element[MAXSIZE];</span><br><span class="line">    <span class="keyword">int</span> Length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#主要操作"><span class="toc-number">1.</span> <span class="toc-text">主要操作</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-线性表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表(Linear List)</a>
-    </h1>
   
 
-        
-        <a href="/2020/04/04/%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-04-04T10:16:08.825Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-	
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">5分</span>
-      </span>
-    </span>
-</div>
-
-          
-	
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由同类型数据元素构成有序序列的线性结构.</p>
-<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><p>1) 表中元素个数为线性表长度.</p>
-<p>2) 线性表没有元素时称空表.</p>
-<p>3) 表起始位置为表头, 结束位置为表尾.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/%E7%BA%BF%E6%80%A7%E8%A1%A8/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-线性表3(Linear List)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/">线性表 - 队列(Queue)</a>
-    </h1>
   
 
-        
-        <a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/" class="archive-article-date">
-  	<time datetime="2020-04-03T07:21:02.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-	
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">468字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-          
-	
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>具有一定操作约束的线性表, 只能在一段插入, 另一端删除. 数据先进先出.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-线性表2(Linear List)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/">线性表 - 堆栈(Stack)</a>
-    </h1>
   
 
-        
-        <a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:43:56.910Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-	
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">357字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-          
-	
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>具有一定操作约束的线性表, 只在一端做插入/删除操作. 数据先进后出.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -891,8 +378,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
