@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hero-ly.github.io">
-  <title>Tag: 基础知识 | My Blog</title>
+  <title>数据结构整理笔记 - 来自 叫我皮卡丘 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
-<meta property="og:url" content="https://hero-ly.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+  <meta name="description" content="我的博客 ：叫我皮卡丘  原博客网站: https:&#x2F;&#x2F;github.com&#x2F;callmePicacho&#x2F;Data-Structres  前言中国大学MOOC上浙大的《数据结构》广受好评，原因有二，一是基础，简单易懂，老师讲得也清楚，另一大优点就是配套的每周相应知识点的编程题了，有难有易，容易题帮助巩固知识点，难题开阔视野。 笔记加入了一些自己的想法，题解也有思路说明 课程地址：https:&#x2F;&#x2F;w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构整理笔记 - 来自 叫我皮卡丘">
+<meta property="og:url" content="https://hero-ly.github.io/2020/04/09/%E4%BB%96%E4%BA%BA%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="我的博客 ：叫我皮卡丘  原博客网站: https:&#x2F;&#x2F;github.com&#x2F;callmePicacho&#x2F;Data-Structres  前言中国大学MOOC上浙大的《数据结构》广受好评，原因有二，一是基础，简单易懂，老师讲得也清楚，另一大优点就是配套的每周相应知识点的编程题了，有难有易，容易题帮助巩固知识点，难题开阔视野。 笔记加入了一些自己的想法，题解也有思路说明 课程地址：https:&#x2F;&#x2F;w">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-09T07:21:32.000Z">
+<meta property="article:modified_time" content="2020-04-09T07:24:36.963Z">
 <meta property="article:author" content="李烨">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="练习题">
+<meta property="article:tag" content="总结">
+<meta property="article:tag" content="转载">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="My Blog" type="application/atom+xml">
@@ -146,36 +154,318 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-他人总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据结构整理笔记 - 来自 叫我皮卡丘
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/%E4%BB%96%E4%BA%BA%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2020-04-09T07:21:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+	
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">736字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">2分</span>
+      </span>
+    </span>
+</div>
+
+          
+	
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我的博客 ：<a href="https://blog.csdn.net/liyuanyue2017" target="_blank" rel="noopener">叫我皮卡丘</a></p>
+<blockquote>
+<p>原博客网站: <a href="https://github.com/callmePicacho/Data-Structres" target="_blank" rel="noopener">https://github.com/callmePicacho/Data-Structres</a></p>
+</blockquote>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>中国大学MOOC上浙大的《数据结构》广受好评，原因有二，一是基础，简单易懂，老师讲得也清楚，另一大优点就是配套的每周相应知识点的编程题了，有难有易，容易题帮助巩固知识点，难题开阔视野。</p>
+<p>笔记加入了一些自己的想法，题解也有思路说明</p>
+<p>课程地址：<a href="https://www.icourse163.org/course/ZJU-93001" target="_blank" rel="noopener">https://www.icourse163.org/course/ZJU-93001</a></p>
+<p>现将笔记和题解记录如下</p>
+<a id="more"></a>
+
+
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p> <a href="https://blog.csdn.net/liyuanyue2017/article/details/82990565" target="_blank" rel="noopener">基本概念</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">题目名称</th>
+<th align="center">考察知识点</th>
+<th align="center">难易度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/82990246" target="_blank" rel="noopener">最大子列和问题</a></td>
+<td align="center">时间复杂度、算法优化</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83015775" target="_blank" rel="noopener">Maximum Subsequence Sum</a></td>
+<td align="center">时间复杂度</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83029537" target="_blank" rel="noopener">二分查找</a></td>
+<td align="center">二分查找算法</td>
+<td align="center">简单</td>
+</tr>
+</tbody></table>
+<h3 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h3><p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83244310" target="_blank" rel="noopener">线性表</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83688288" target="_blank" rel="noopener">堆栈</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83688306" target="_blank" rel="noopener">队列</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">题目名称</th>
+<th align="center">考察知识点</th>
+<th align="center">难易度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83214908" target="_blank" rel="noopener">两个有序链表序列的合并</a></td>
+<td align="center">线性表</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83244253" target="_blank" rel="noopener">一元多项式的乘法与加法运算</a></td>
+<td align="center">线性表</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83269991" target="_blank" rel="noopener">Reversing Linked List</a></td>
+<td align="center">线性表</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83302030" target="_blank" rel="noopener">Pop Sequence</a></td>
+<td align="center">栈</td>
+<td align="center">中等</td>
+</tr>
+</tbody></table>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83412796" target="_blank" rel="noopener">树的定义</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83548361" target="_blank" rel="noopener">二叉树的遍历</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83614914" target="_blank" rel="noopener">二叉搜索树</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83652743" target="_blank" rel="noopener">平衡二叉树</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83713957" target="_blank" rel="noopener">堆</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83744262" target="_blank" rel="noopener">哈夫曼树</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/83830634" target="_blank" rel="noopener">并查集的实现和优化</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">题目名称</th>
+<th align="center">考察知识点</th>
+<th align="center">难易度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83538124" target="_blank" rel="noopener">树的同构</a></td>
+<td align="center">树的性质</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83539009" target="_blank" rel="noopener">List Leaves</a></td>
+<td align="center">树的建立与遍历</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83545926" target="_blank" rel="noopener">Tree Traversals Again</a></td>
+<td align="center">树的遍历</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83625326" target="_blank" rel="noopener">是否同一棵二叉搜索树</a></td>
+<td align="center">BST的建立与遍历</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83653257" target="_blank" rel="noopener">Root of AVL Tree</a></td>
+<td align="center">AVL的调整</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83658106" target="_blank" rel="noopener">Complete Binary Search Tree</a></td>
+<td align="center">BST的花样(?)建立</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83683953" target="_blank" rel="noopener">二叉搜索树的操作集</a></td>
+<td align="center">BST的操作集合</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83714443" target="_blank" rel="noopener">堆中的路径</a></td>
+<td align="center">最小堆的建立</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83831833" target="_blank" rel="noopener">File Transfer</a></td>
+<td align="center">并查集</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/83870849" target="_blank" rel="noopener">Huffman Codes</a></td>
+<td align="center">哈夫曼树编码</td>
+<td align="center">中等</td>
+</tr>
+</tbody></table>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p><a href="https://blog.csdn.net/liyuanyue2017/article/details/84029138" target="_blank" rel="noopener">图的定义</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/84104075" target="_blank" rel="noopener">图的遍历</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/84145832" target="_blank" rel="noopener">最短路径</a></p>
+<p><a href="https://blog.csdn.net/liyuanyue2017/article/details/84202310" target="_blank" rel="noopener">最小生成树</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">题目名称</th>
+<th align="center">考察知识点</th>
+<th align="center">难易度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84034666" target="_blank" rel="noopener">列出连通集</a></td>
+<td align="center">图的遍历</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84068599" target="_blank" rel="noopener">Saving James Bond - Easy Version</a></td>
+<td align="center">图的遍历</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84094685" target="_blank" rel="noopener">六度空间</a></td>
+<td align="center">图的遍历</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84145804" target="_blank" rel="noopener">哈利·波特的考试</a></td>
+<td align="center">最短路径</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84192009" target="_blank" rel="noopener">旅游规划</a></td>
+<td align="center">最短路径</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84201998" target="_blank" rel="noopener">公路村村通</a></td>
+<td align="center">最小生成树</td>
+<td align="center">简单</td>
+</tr>
+</tbody></table>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p><a href="https://blog.csdn.net/liyuanyue2017/article/details/84339337" target="_blank" rel="noopener">排序</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">题目名称</th>
+<th align="center">考察知识点</th>
+<th align="center">难易度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84325540" target="_blank" rel="noopener">排序</a></td>
+<td align="center">用来测试排序算法</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84327267" target="_blank" rel="noopener">Insert or Merge</a></td>
+<td align="center">插入排序、归并排序</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84328364" target="_blank" rel="noopener">Insertion or Heap Sort</a></td>
+<td align="center">插入排序、堆排序</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84339532" target="_blank" rel="noopener">统计工龄</a></td>
+<td align="center">桶排序</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84347191" target="_blank" rel="noopener">PAT Judge</a></td>
+<td align="center">结构体排序</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84400411" target="_blank" rel="noopener">Sort with Swap(0, i)</a></td>
+<td align="center">表排序</td>
+<td align="center">简单</td>
+</tr>
+</tbody></table>
+<h3 id="散列查找"><a href="#散列查找" class="headerlink" title="散列查找"></a>散列查找</h3><p><a href="https://blog.csdn.net/liyuanyue2017/article/details/84572145" target="_blank" rel="noopener">散列查找</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">题目名称</th>
+<th align="center">考察知识点</th>
+<th align="center">难易度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84471871" target="_blank" rel="noopener">电话聊天狂人</a></td>
+<td align="center">散列查找</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84477582" target="_blank" rel="noopener">Hashing</a></td>
+<td align="center">散列查找</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84491884" target="_blank" rel="noopener">QQ帐户的申请与登陆</a></td>
+<td align="center">散列查找</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84501507" target="_blank" rel="noopener">Hashing - Hard Version</a></td>
+<td align="center">散列查找、拓扑排序</td>
+<td align="center">中等</td>
+</tr>
+</tbody></table>
+<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><table>
+<thead>
+<tr>
+<th align="center">题目名称</th>
+<th align="center">考察知识点</th>
+<th align="center">难易度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://blog.csdn.net/liyuanyue2017/article/details/84567509" target="_blank" rel="noopener">KMP 串的模式匹配</a></td>
+<td align="center">串的匹配</td>
+<td align="center">中等</td>
+</tr>
+</tbody></table>
+<p>注：<strong>Saving James Bond - Hard Version</strong> 和 <strong>关键活动</strong>  实在没时间做了…</p>
+<p>完结撒花，弱弱求个 star~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/08/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-04-08T07:27:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/08/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">二叉树 - 哈夫曼树(Huffman Tree)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -185,335 +475,133 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">练习题</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转载</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://hero-ly.github.io/2020/04/09/%E4%BB%96%E4%BA%BA%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/07/%E5%A0%86/" class="archive-article-date">
-  	<time datetime="2020-04-07T02:58:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/08/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二叉树 - 哈夫曼树(Huffman Tree)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/07/%E5%A0%86/">二叉树 - 堆(Heap)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">2.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性结构"><span class="toc-number">3.</span> <span class="toc-text">线性结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#树"><span class="toc-number">4.</span> <span class="toc-text">树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图"><span class="toc-number">5.</span> <span class="toc-text">图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-number">6.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#散列查找"><span class="toc-number">7.</span> <span class="toc-text">散列查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KMP"><span class="toc-number">8.</span> <span class="toc-text">KMP</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/06/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-04-06T08:40:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/06/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">二叉树 - 二叉搜索树与平衡二叉树</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%912/" class="archive-article-date">
-  	<time datetime="2020-04-05T09:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%912/">二叉树</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-04-05T06:12:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树 - 查找与树(Tree)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/04/%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-04-04T10:16:08.825Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/04/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表(Linear List)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/" class="archive-article-date">
-  	<time datetime="2020-04-03T07:21:02.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A83(Linear%20List)/">线性表 - 队列(Queue)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:43:56.910Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/">线性表 - 堆栈(Stack)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -537,9 +625,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
