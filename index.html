@@ -148,6 +148,105 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-高数-极限" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/12/%E9%AB%98%E6%95%B0-%E6%9E%81%E9%99%90/">高数 - 极限</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/12/%E9%AB%98%E6%95%B0-%E6%9E%81%E9%99%90/" class="archive-article-date">
+  	<time datetime="2020-04-12T09:15:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+</a>
+	
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">4分</span>
+      </span>
+    </span>
+</div>
+
+          
+	
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="极限定义"><a href="#极限定义" class="headerlink" title="极限定义"></a>极限定义</h3><p>数列极限定义:<br>$$<br>\forall\epsilon&gt;0, \exists N, 使得n&gt;N时, |X_n-a|&lt;\epsilon, 则a为数列的极限.<br>$$<br>函数极限定义:<br>$$<br>\forall \epsilon&gt;0, \exists \delta , 使得0&lt;|X-X_0|&lt;\delta 时, |f(X)-a|&lt;\epsilon, 则a为函数的极限.<br>$$<br>函数极限存在条件:<br>$$<br>左极限:\lim \limits_{x\rightarrow x_0^-} f(x)=A, 右极限:\lim \limits_{x\rightarrow x_0^+} f(x)=A\<br>当左右极限都存在, 并且左极限=右极限, 则\lim \limits_{x\rightarrow x_0} f(x)=A 存在.<br>$$</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">高等数学</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/12/%E9%AB%98%E6%95%B0-%E6%9E%81%E9%99%90/">阅读全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-洛谷P1115题解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -414,7 +513,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>设二叉树有n个叶结点, 每个叶结点带有权值Wk, 从根节点到每个叶子节点的长度为Ik, 则每个叶子节点的带权路径长度就是:<br>$$<br>WPL = \sum_{k=1}^n{W_k*L_k}<br>$$<br>当WPL为最小时, 该二叉树为最优二叉树/哈夫曼树.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	先把HuffmanTree设为指向结点的指针类型</span></span><br><span class="line"><span class="comment">	然后把堆内的数据类型设为HuffmanTree的动态数组</span></span><br><span class="line"><span class="comment">	即最小堆MinHeap储存的是权值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TNode</span> *<span class="title">HuffmanTree</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">HeapStruct</span> <span class="title">MinHeap</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> weight;</span><br><span class="line">    HuffmanTree Left;</span><br><span class="line">    HuffmanTree Right;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HeapStruct</span>&#123;</span></span><br><span class="line">    HuffmanTree *Data;</span><br><span class="line">    <span class="keyword">int</span> Size;</span><br><span class="line">    <span class="keyword">int</span> Capacity;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         
       
 
@@ -1097,105 +1195,10 @@
 
 
   
-    <article id="post-线性表2(Linear List)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/">线性表 - 堆栈(Stack)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:43:56.910Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-	
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">357字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-          
-	
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>具有一定操作约束的线性表, 只在一端做插入/删除操作. 数据先进后出.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E7%BA%BF%E6%80%A7%E8%A1%A82(Linear%20List)/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -1340,6 +1343,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">洛谷</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">高等数学</a>
               </li>
             
             <div class="clearfix"></div>
